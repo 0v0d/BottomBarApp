@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/navigation_graph"
+	app:startDestination="@id/navi_home">
+
+	<fragment
+		android:id="@+id/navi_home"
+		android:name="com.example.bottombarapp.HomeFragment"
+		android:label="Home" />
+
+	<fragment
+		android:id="@+id/navi_search"
+		android:name="com.example.bottombarapp.SearchFragment"
+		android:label="Search" />
+
+	<fragment
+		android:id="@+id/navi_star"
+		android:name="com.example.bottombarapp.StarFragment"
+		android:label="Star" />
+</navigation>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BottomBarApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">検索</string>
+    <string name="home">ホーム</string>
+    <string name="star">スター</string>
+</resources>

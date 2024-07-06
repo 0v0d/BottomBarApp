@@ -37,7 +37,7 @@ fun MyApp(modifier: Modifier = Modifier) {
                                 contentDescription = screen.route,
                             )
                         },
-                        label = { Text(screen.route) },
+                        label = { Text(text = screen.label) },
                         selected = currentScreen == screen,
                         onClick = {
                             navController.navigateSingleTopTo(screen.route)

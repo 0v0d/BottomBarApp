@@ -13,24 +13,28 @@ import com.example.bottombarapp.ui.star.StarScreen
 interface Destination {
     val icon: ImageVector
     val route: String
+    val label: String
     val screen: @Composable () -> Unit
 }
 
 object Home : Destination {
     override val icon = Icons.Default.Home
     override val route = "home"
+    override val label = "ホーム"
     override val screen: @Composable () -> Unit = { HomeScreen() }
 }
 
 object Search : Destination {
     override val icon = Icons.Default.Search
     override val route = "search"
+    override val label = "検索"
     override val screen: @Composable () -> Unit = { SearchScreen() }
 }
 
 object Star : Destination {
     override val icon = Icons.Default.Star
     override val route = "star"
+    override val label = ""
     override val screen: @Composable () -> Unit = { StarScreen() }
 }
 

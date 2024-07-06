@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.example.bottombarapp.R
 
 @Composable
 fun SearchScreen(
@@ -26,7 +28,7 @@ fun SearchScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = "Search Screen",
+                text = stringResource(id = R.string.search),
             )
         }
     }

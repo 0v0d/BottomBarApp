@@ -28,23 +28,10 @@ fun MyApp(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            NavigationBar {
-                tabRowScreens.forEach { screen ->
-                    NavigationBarItem(
-                        icon = {
-                            Icon(
-                                imageVector = screen.icon,
-                                contentDescription = screen.route,
-                            )
-                        },
-                        label = { Text(text = screen.label) },
-                        selected = currentScreen == screen,
-                        onClick = {
-                            navController.navigateSingleTopTo(screen.route)
-                        }
-                    )
-                }
-            }
+            NavigationBarContent(
+                navController = navController,
+                currentScreen = currentScreen,
+            )
         }
     ) {
         Box(modifier = Modifier.padding(it)) {
@@ -66,6 +53,31 @@ fun MyApp(modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+private fun NavigationBarContent(
+    navController: NavHostController,
+    currentScreen: Destination,
+) {
+    NavigationBar {
+        tabRowScreens.forEach { screen ->
+            NavigationBarItem(
+                icon = {
+                    Icon(
+                        imageVector = screen.icon,
+                        contentDescription = screen.route,
+                    )
+                },
+                label = { Text(text = screen.label) },
+                selected = currentScreen == screen,
+                onClick = {
+                    navController.navigateSingleTopTo(screen.route)
+                }
+            )
+        }
+    }
+}
+
 
 fun NavHostController.navigateSingleTopTo(route: String) =
     this.navigate(route) {
